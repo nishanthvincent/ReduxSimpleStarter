@@ -24,7 +24,8 @@ class App extends Component {
         {
           videos: videos,
           selectedVideo: videos[0]
-        });
+        }
+      );
     });
 
   }
@@ -33,11 +34,13 @@ class App extends Component {
       return (
         <div>
           <SearchBar />
+          <div className="row">
           <VideoDetail video={this.state.selectedVideo} />
-          <VideoList
-            onSelectVideo={(selectedVideo) => this.setState({selectedVideo: selectedVideo})}
-            videos={this.state.videos}
-          />
+            <VideoList
+              onSelectVideo={(selectedVideo) => this.setState({selectedVideo: selectedVideo})}
+              videos={this.state.videos}
+            />
+          </div>
         </div>
       );
     }
