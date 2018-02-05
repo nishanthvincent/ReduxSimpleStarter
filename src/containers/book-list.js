@@ -3,27 +3,29 @@ import {connect} from 'react-redux';
 
 class BookList extends Component {
   
+  
  renderList() {
    return this.props.books.map(function (book) {
-     return (<li key={book.title}>{book.title}</li>)
+     return (<li key={book.title} className="list-group-item">{book.title}</li>)
    })
  }
 
   render() {
-    return(<ul>
-    this.renderList()
+    return(<ul className="list-group col-sm4">
+    {this.renderList()}
     </ul>
     )
     
   }
   
+}
+
   function mapStateToProps(state) {
     return {
-      books: this.state.books
+      books: state.books
     };
   }
   
   
-}
 
 export default connect(mapStateToProps)(BookList);
