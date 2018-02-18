@@ -16,7 +16,7 @@ class BookList extends Component {
           {book.title}
         </li>
       )
-    })
+    }, this)
   }
 
   render() {
@@ -41,7 +41,7 @@ function mapStateToProps(state) {
 // on the booklist container
 function mapDispatchToProps(dispatch) {
   // Whenever selectbook is called, the result should be passed to all our reducers
-  return  bindActionCreators({selectBook: selectBook}, dispatch);
+  return bindActionCreators({selectBook: selectBook}, dispatch);
 }
 
 
