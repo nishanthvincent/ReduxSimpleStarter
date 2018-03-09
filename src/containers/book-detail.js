@@ -3,23 +3,21 @@ import {connect} from 'react-redux';
 
 class BookDetail extends Component {
   render() {
-    console.log(this.props.book)
-    
-    if(!this.props.book) {
-      return <div>Select a book to get started.</div>
-    }
-    
+
+    if(!this.props.book) { return <div>Select a book to get started.</div>}
+
     return (
       <div>
         <h3>BookDetail:</h3>
-        <div>this.props.book.title</div>
+        <div>{this.props.book.title}</div>
       </div>
     )
   }
-  
+
 }
 
   function mapStateToProps(state) {
+    console.log('state', state);
     return {
       book: state.activeBook
     }
